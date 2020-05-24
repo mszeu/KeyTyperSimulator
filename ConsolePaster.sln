@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePaster", "ConsolePaster\ConsolePaster.csproj", "{980909D5-5ED9-4D42-9F3A-0F17CB6F3319}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{980909D5-5ED9-4D42-9F3A-0F17CB6F3319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{980909D5-5ED9-4D42-9F3A-0F17CB6F3319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{980909D5-5ED9-4D42-9F3A-0F17CB6F3319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{980909D5-5ED9-4D42-9F3A-0F17CB6F3319}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F35C99A0-C203-41D0-85AD-4723B1A4C983}
+	EndGlobalSection
+EndGlobal
