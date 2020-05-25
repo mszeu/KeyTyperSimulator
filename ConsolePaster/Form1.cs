@@ -43,21 +43,32 @@ namespace KeyTyperSimulator
 
             }
         public void MandaCaratteri(string daMandare) {
-            try
+            DialogResult dAnswer=DialogResult.OK;
+
+            if (Control.IsKeyLocked(Keys.CapsLock))
             {
-                Microsoft.VisualBasic.Interaction.AppActivate(textApp.Text);
-                Thread.Sleep(trackBar2.Value);
-                foreach (char carattere in daMandare)
+                dAnswer = MessageBox.Show("CAPS Lock is enabled. The characters case sent to the application will be inverted",
+                    "ATTENTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            if (dAnswer == DialogResult.OK)
                 {
-                    SendKeys.SendWait(carattere.ToString());
-                    Thread.Sleep(trackBar1.Value);
+                    try
+                        {
+                
+                           Microsoft.VisualBasic.Interaction.AppActivate(textApp.Text);
+                           Thread.Sleep(trackBar2.Value);
+                                foreach (char carattere in daMandare)
+                                    {
+                                        SendKeys.SendWait(carattere.ToString());
+                                        Thread.Sleep(trackBar1.Value);
 
+                                    }
+                        }
+                    catch (Exception E) {
+
+                            MessageBox.Show(E.Message, "Error");
+                                        }
                 }
-            }
-            catch (Exception E) {
-
-                MessageBox.Show(E.Message, "Error");
-            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -129,6 +140,19 @@ namespace KeyTyperSimulator
         {
             AboutBox1 frm = new AboutBox1();
             frm.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+
+
         }
     }
 }
