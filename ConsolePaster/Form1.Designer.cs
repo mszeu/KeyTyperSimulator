@@ -50,6 +50,7 @@
             this.textApp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAbout = new System.Windows.Forms.Button();
+            this.btnClrAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
@@ -254,11 +255,22 @@
             this.btnAbout.UseVisualStyleBackColor = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
+            // btnClrAll
+            // 
+            this.btnClrAll.Location = new System.Drawing.Point(49, 259);
+            this.btnClrAll.Name = "btnClrAll";
+            this.btnClrAll.Size = new System.Drawing.Size(79, 21);
+            this.btnClrAll.TabIndex = 21;
+            this.btnClrAll.Text = "Clear All";
+            this.btnClrAll.UseVisualStyleBackColor = true;
+            this.btnClrAll.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 304);
+            this.Controls.Add(this.btnClrAll);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textApp);
@@ -316,6 +328,7 @@
         private System.Windows.Forms.TextBox textApp;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Button btnClrAll;
     }
 }
 
