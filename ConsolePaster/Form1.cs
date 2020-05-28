@@ -21,8 +21,10 @@
 //    along with this program.If not, see<https://www.gnu.org/licenses/>.
 
 using System;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace KeyTyperSimulator
 {
@@ -44,6 +46,7 @@ namespace KeyTyperSimulator
             }
         public void MandaCaratteri(string daMandare) {
             DialogResult dAnswer=DialogResult.OK;
+            
 
             if (Control.IsKeyLocked(Keys.CapsLock))
             {
@@ -63,7 +66,11 @@ namespace KeyTyperSimulator
                                         Thread.Sleep(trackBar1.Value);
 
                                     }
-                        }
+                                if (checkBoxEnter.Checked)
+                                {
+                                SendKeys.SendWait("{ENTER}");
+                                }
+                }
                     catch (Exception E) {
 
                             MessageBox.Show(E.Message, "Error");
@@ -73,12 +80,12 @@ namespace KeyTyperSimulator
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            label1.Text = trackBar1.Value.ToString();
+            label1.Text = trackBar1.Value.ToString() + " ms";
         }
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
-            label2.Text = trackBar2.Value.ToString();
+            label2.Text = trackBar2.Value.ToString() + " ms";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -115,8 +122,11 @@ namespace KeyTyperSimulator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label1.Text = trackBar1.Value.ToString();
-            label2.Text = trackBar2.Value.ToString();
+            label1.Text = trackBar1.Value.ToString() + " ms"; 
+            label2.Text = trackBar2.Value.ToString() + " ms";
+            toolStripStatusLabel1.Text = String.Format("Version {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            toolStripStatusLabel2.Spring = true;
+            toolStripStatusLabel2.Alignment = ToolStripItemAlignment.Right;
             if (!Properties.Settings.Default.LicenseAgreementAccepted)
             {
 
@@ -152,6 +162,23 @@ namespace KeyTyperSimulator
             textBox5.Clear();
             textBox6.Clear();
 
+
+        }
+
+        private void checkBoxEnter_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxEnter.Checked) 
+            { checkBoxEnter.ForeColor = Color.DarkRed;
+                checkBoxEnter.Font = new Font(textBox1.Font, FontStyle.Bold);
+            } else
+            {
+                checkBoxEnter.ForeColor = Color.Black;
+                checkBoxEnter.Font = new Font(textBox1.Font, FontStyle.Regular);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
