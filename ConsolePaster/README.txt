@@ -6,7 +6,7 @@ DESCRIPTION:
     characters as when they are typed using the keyboard with a selectable frequency.
 
 REQUIREMENTS:
-	To run the program you need Microsoft .NET Framework 4.7.1
+	To run the program you need Microsoft .NET Framework 4.7.2
 	Source code was written using Microsoft Visual Studio 2019
 	
 COPYRIGHT & LICENSE:
