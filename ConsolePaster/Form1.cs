@@ -181,5 +181,16 @@ namespace KeyTyperSimulator
         {
 
         }
+
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
+        {
+
+            try {
+                System.Diagnostics.Process.Start("http://msz.eu");
+            }
+            catch (Exception ecce) {
+                MessageBox.Show(ecce.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+        }
     }
 }
