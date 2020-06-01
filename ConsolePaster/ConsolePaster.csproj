@@ -111,6 +111,7 @@
   <ItemGroup>
     <Content Include="Iconsmind-Outline-Type-Pass.ico" />
     <Content Include="COPYING.txt" />
+    <Content Include="CHANGEFILE.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
