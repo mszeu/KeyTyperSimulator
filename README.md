@@ -1,7 +1,7 @@
 # PROGRAM NAME     
   KeyTyper Simulator
 # VERSION 
-  1.2.2.0
+  1.2.2.1
 
 # DESCRIPTION
   The program switches to the indicated process and simulate typing a sequence of 
