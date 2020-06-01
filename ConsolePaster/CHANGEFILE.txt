@@ -2,7 +2,7 @@
 	1.0 
 		Initial Version
 	
-	1.2.1.1
+	1.2.2.1
 		- Detection of CAPS LOCK status and message box to inform the user about that
 		- Option to clear all the fields
 		- Status bar with some information about the author website and version
