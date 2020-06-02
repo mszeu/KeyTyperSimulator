@@ -9,4 +9,4 @@
 		- Added the option to terminate the input with a <CR>
 		- Some minor fixes
 	1.2.2.2
-		- Code clearup
+		- Code clearup 
