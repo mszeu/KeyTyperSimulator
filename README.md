@@ -1,17 +1,18 @@
-# PROGRAM NAME     
+# KeyTyper Simulator
+## PROGRAM NAME     
   KeyTyper Simulator
-# VERSION 
-  1.2.2.1
+## VERSION 
+  **1.2.2.1**
 
-# DESCRIPTION
-  The program switches to the indicated process and simulate typing a sequence of 
+## DESCRIPTION
+  **KeyTyper Simulator** switches to the indicated process and simulate typing a sequence of 
   characters as when they are typed using the keyboard with a selectable frequency.
 
-# REQUIREMENTS
-  To run the program you need Microsoft .NET Framework 4.7.2
-	Source code was written using Microsoft Visual Studio 2019
+## REQUIREMENTS
+  To run the program you need **Microsoft .NET Framework 4.7.2**
+	Source code was written using **Microsoft Visual Studio 2019**
 	
-# COPYRIGHT & LICENSE
+## COPYRIGHT & LICENSE
   Copyright(C) 2020  Marco S. Zuppone - msz@msz.eu - https://msz.eu
 
   This program is free software: you can redistribute it and/or modify
