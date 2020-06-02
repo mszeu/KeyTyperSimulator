@@ -1,4 +1,4 @@
-﻿VERSION HSITORY
+﻿VERSION HISTORY
 	1.0 
 		Initial Version
 	
