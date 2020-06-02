@@ -8,3 +8,5 @@
 		- Status bar with some information about the author website and version
 		- Added the option to terminate the input with a <CR>
 		- Some minor fixes
+	1.2.2.2
+		- Code clearup

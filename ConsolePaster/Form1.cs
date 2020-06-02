@@ -141,11 +141,6 @@ namespace KeyTyperSimulator
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAbout_Click(object sender, EventArgs e)
         {
             AboutBox1 frm = new AboutBox1();
@@ -175,11 +170,6 @@ namespace KeyTyperSimulator
                 checkBoxEnter.ForeColor = Color.Black;
                 checkBoxEnter.Font = new Font(textBox1.Font, FontStyle.Regular);
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)

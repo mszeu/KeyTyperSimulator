@@ -136,7 +136,6 @@ namespace KeyTyperSimulator
             this.labelProductName.TabIndex = 19;
             this.labelProductName.Text = "KeyTyper Simulator";
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelProductName.Click += new System.EventHandler(this.labelProductName_Click);
             // 
             // logoPictureBox
             // 
@@ -178,7 +177,6 @@ namespace KeyTyperSimulator
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(413, 274);
             this.tableLayoutPanel.TabIndex = 0;
-            this.tableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_Paint);
             // 
             // button1
             // 

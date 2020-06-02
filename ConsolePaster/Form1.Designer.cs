@@ -189,7 +189,6 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // trackBar2
             // 
@@ -221,7 +220,6 @@
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Initial Delay";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
