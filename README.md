@@ -1,6 +1,7 @@
 # KeyTyper Simulator
+![](https://mszit-msz.netdna-ssl.com/wp-content/uploads/2020/05/KeyTyper.png)
 ## PROGRAM NAME     
-  KeyTyper Simulator
+  **KeyTyper Simulator**
 ## VERSION 
   **1.2.2.1**
 
