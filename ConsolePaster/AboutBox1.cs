@@ -125,16 +125,6 @@ namespace KeyTyperSimulator
         }
         #endregion
 
-        private void labelProductName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void okButton_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.LicenseAgreementAccepted = true;
