@@ -9,4 +9,8 @@
 		- Added the option to terminate the input with a <CR>
 		- Some minor fixes
 	1.2.2.2
-		- Code clearup 
+		- Code clearup
+	1.2.3
+		- Code cleanup and refactoring
+		- Bug fixed: if the application to send the keystrokes were not found an uncaught exteption could be thrown
+		- Added a checkbox to send the keystrokes to the currently app in focus

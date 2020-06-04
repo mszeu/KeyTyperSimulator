@@ -127,7 +127,7 @@ namespace KeyTyperSimulator
             frm.ShowDialog();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnClearAll_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
             textBox2.Clear();

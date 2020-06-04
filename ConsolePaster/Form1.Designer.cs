@@ -269,7 +269,7 @@
             this.btnClrAll.TabIndex = 21;
             this.btnClrAll.Text = "Clear All";
             this.btnClrAll.UseVisualStyleBackColor = true;
-            this.btnClrAll.Click += new System.EventHandler(this.button7_Click);
+            this.btnClrAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
             // checkBoxEnter
             // 
