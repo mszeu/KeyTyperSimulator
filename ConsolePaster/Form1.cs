@@ -35,18 +35,10 @@ namespace KeyTyperSimulator
             InitializeComponent();
         }
 
-      
-        private void button1_Click(object sender, EventArgs e)
+        public void MandaCaratteri(string daMandare)
         {
+            DialogResult dAnswer = DialogResult.OK;
 
-           
-            MandaCaratteri(textBox1.Text);
-            
-
-            }
-        public void MandaCaratteri(string daMandare) {
-            DialogResult dAnswer=DialogResult.OK;
-            
 
             if (Control.IsKeyLocked(Keys.CapsLock))
             {
@@ -54,71 +46,46 @@ namespace KeyTyperSimulator
                     "ATTENTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             if (dAnswer == DialogResult.OK)
+            {
+                try
                 {
-                    try
-                        {
-                
-                           Microsoft.VisualBasic.Interaction.AppActivate(textApp.Text);
-                           Thread.Sleep(trackBar2.Value);
-                                foreach (char carattere in daMandare)
-                                    {
-                                        SendKeys.SendWait(carattere.ToString());
-                                        Thread.Sleep(trackBar1.Value);
 
-                                    }
-                                if (checkBoxEnter.Checked)
-                                {
-                                SendKeys.SendWait("{ENTER}");
-                                }
+                    Microsoft.VisualBasic.Interaction.AppActivate(textApp.Text);
+                    Thread.Sleep(trackBar2.Value);
+                    foreach (char carattere in daMandare)
+                    {
+                        SendKeys.SendWait(carattere.ToString());
+                        Thread.Sleep(trackBar1.Value);
+
+                    }
+                    if (checkBoxEnter.Checked)
+                    {
+                        SendKeys.SendWait("{ENTER}");
+                    }
                 }
-                    catch (Exception E) {
+                catch (Exception E)
+                {
 
-                            MessageBox.Show(E.Message, "Error");
-                                        }
+                    MessageBox.Show(E.Message, "Error");
                 }
+            }
         }
+      
+        private void button1_Click(object sender, EventArgs e) => MandaCaratteri(textBox1.Text);
+       
+        private void trackBar1_Scroll(object sender, EventArgs e) => label1.Text = trackBar1.Value.ToString() + " ms";
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            label1.Text = trackBar1.Value.ToString() + " ms";
-        }
+        private void trackBar2_Scroll(object sender, EventArgs e) => label2.Text = trackBar2.Value.ToString() + " ms";
 
-        private void trackBar2_Scroll(object sender, EventArgs e)
-        {
-            label2.Text = trackBar2.Value.ToString() + " ms";
-        }
+        private void button2_Click(object sender, EventArgs e) => MandaCaratteri(textBox2.Text);
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-           
+        private void button3_Click(object sender, EventArgs e) => MandaCaratteri(textBox3.Text);
 
-            MandaCaratteri(textBox2.Text);
-        }
+        private void button4_Click(object sender, EventArgs e) => MandaCaratteri(textBox4.Text);
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-         
+        private void button5_Click(object sender, EventArgs e) => MandaCaratteri(textBox5.Text);
 
-            MandaCaratteri(textBox3.Text);
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Microsoft.VisualBasic.Interaction.AppActivate(textApp.Text);
-
-            MandaCaratteri(textBox4.Text);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            MandaCaratteri(textBox5.Text);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            MandaCaratteri(textBox6.Text);
-        }
+        private void button6_Click(object sender, EventArgs e) => MandaCaratteri(textBox6.Text);
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -149,15 +116,12 @@ namespace KeyTyperSimulator
 
         private void button7_Click(object sender, EventArgs e)
         {
-
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
             textBox6.Clear();
-
-
         }
 
         private void checkBoxEnter_CheckedChanged(object sender, EventArgs e)
@@ -179,7 +143,7 @@ namespace KeyTyperSimulator
                 System.Diagnostics.Process.Start("http://msz.eu");
             }
             catch (Exception ecce) {
-                MessageBox.Show(ecce.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = MessageBox.Show(ecce.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
         }
     }
