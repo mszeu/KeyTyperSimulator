@@ -49,12 +49,20 @@ namespace KeyTyperSimulator
             {
                 try
                 {
-                    try
+                    if (!checkBoxHasFocus.Checked)
                     {
-                        Microsoft.VisualBasic.Interaction.AppActivate(textApp.Text);
-                        toolStripStatusLabel3.Text = "";
+
+                        try
+                        {
+                            Microsoft.VisualBasic.Interaction.AppActivate(textApp.Text);
+                            toolStripStatusLastError.Text = "";
+                        }
+                        catch (Exception ex) { toolStripStatusLastError.Text = ex.Message + " sending to process that has focus"; }
                     }
-                    catch (Exception ex) { toolStripStatusLabel3.Text = ex.Message + " sending to process that has focus"; }
+                    else
+                    { 
+                        toolStripStatusLastError.Text = "";
+                    }
                     Thread.Sleep(trackBar2.Value);
                     foreach (char carattere in daMandare)
                     {
@@ -98,7 +106,7 @@ namespace KeyTyperSimulator
             toolStripStatusLabel1.Text = String.Format("Version {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
             toolStripStatusLabel2.Spring = true;
             toolStripStatusLabel2.Alignment = ToolStripItemAlignment.Right;
-            toolStripStatusLabel3.Text = "";
+            toolStripStatusLastError.Text = "";
             if (!Properties.Settings.Default.LicenseAgreementAccepted)
             {
 
@@ -150,6 +158,19 @@ namespace KeyTyperSimulator
             catch (Exception ecce) {
                 _ = MessageBox.Show(ecce.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHasFocus.Checked)
+            {
+                textApp.Enabled = false;
+
+            }
+            else
+            {
+                textApp.Enabled = true;
+            }
         }
     }
 }

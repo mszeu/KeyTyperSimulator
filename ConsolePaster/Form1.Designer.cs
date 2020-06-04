@@ -54,8 +54,9 @@
             this.checkBoxEnter = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLastError = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.checkBoxHasFocus = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -233,7 +234,7 @@
             // 
             // textApp
             // 
-            this.textApp.Location = new System.Drawing.Point(356, 26);
+            this.textApp.Location = new System.Drawing.Point(353, 26);
             this.textApp.Name = "textApp";
             this.textApp.Size = new System.Drawing.Size(234, 20);
             this.textApp.TabIndex = 18;
@@ -285,7 +286,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel3,
+            this.toolStripStatusLastError,
             this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 303);
             this.statusStrip1.Name = "statusStrip1";
@@ -299,6 +300,12 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLastError.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLastError.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLastError.Text = "toolStripStatusLabel3";
+            // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -309,17 +316,23 @@
             this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
             // 
-            // toolStripStatusLabel3
+            // checkBoxHasFocus
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel3.Text = "toolStripStatusLabel3";
+            this.checkBoxHasFocus.AutoSize = true;
+            this.checkBoxHasFocus.Location = new System.Drawing.Point(356, 63);
+            this.checkBoxHasFocus.Name = "checkBoxHasFocus";
+            this.checkBoxHasFocus.Size = new System.Drawing.Size(191, 17);
+            this.checkBoxHasFocus.TabIndex = 24;
+            this.checkBoxHasFocus.Text = "Send to the process that has focus";
+            this.checkBoxHasFocus.UseVisualStyleBackColor = true;
+            this.checkBoxHasFocus.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 325);
+            this.Controls.Add(this.checkBoxHasFocus);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.checkBoxEnter);
             this.Controls.Add(this.btnClrAll);
@@ -387,7 +400,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLastError;
+        private System.Windows.Forms.CheckBox checkBoxHasFocus;
     }
 }
 
