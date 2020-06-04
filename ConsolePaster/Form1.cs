@@ -63,11 +63,11 @@ namespace KeyTyperSimulator
                     { 
                         toolStripStatusLastError.Text = "";
                     }
-                    Thread.Sleep(trackBar2.Value);
+                    Thread.Sleep(trackBarInitialDelay.Value);
                     foreach (char carattere in daMandare)
                     {
                         SendKeys.SendWait(carattere.ToString());
-                        Thread.Sleep(trackBar1.Value);
+                        Thread.Sleep(trackBarTypeFreq.Value);
 
                     }
                     if (checkBoxEnter.Checked)
@@ -77,18 +77,18 @@ namespace KeyTyperSimulator
                 }
                 catch (Exception E)
                 {
-
                     MessageBox.Show(E.Message, "Error");
                 }
             }
         }
       
-        private void button1_Click(object sender, EventArgs e) => MandaCaratteri(textBox1.Text);
        
-        private void trackBar1_Scroll(object sender, EventArgs e) => label1.Text = trackBar1.Value.ToString() + " ms";
+       
+        private void trackBar1_Scroll(object sender, EventArgs e) => labelTypeFreq.Text = trackBarTypeFreq.Value.ToString() + " ms";
 
-        private void trackBar2_Scroll(object sender, EventArgs e) => label2.Text = trackBar2.Value.ToString() + " ms";
+        private void trackBar2_Scroll(object sender, EventArgs e) => labelInitialDelay.Text = trackBarInitialDelay.Value.ToString() + " ms";
 
+        private void button1_Click(object sender, EventArgs e) => MandaCaratteri(textBox1.Text);
         private void button2_Click(object sender, EventArgs e) => MandaCaratteri(textBox2.Text);
 
         private void button3_Click(object sender, EventArgs e) => MandaCaratteri(textBox3.Text);
@@ -101,9 +101,9 @@ namespace KeyTyperSimulator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label1.Text = trackBar1.Value.ToString() + " ms"; 
-            label2.Text = trackBar2.Value.ToString() + " ms";
-            toolStripStatusLabel1.Text = String.Format("Version {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            labelTypeFreq.Text = trackBarTypeFreq.Value.ToString() + " ms"; 
+            labelInitialDelay.Text = trackBarInitialDelay.Value.ToString() + " ms";
+            toolStripStatusVersion.Text = String.Format("Version {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
             toolStripStatusLabel2.Spring = true;
             toolStripStatusLabel2.Alignment = ToolStripItemAlignment.Right;
             toolStripStatusLastError.Text = "";
@@ -160,7 +160,7 @@ namespace KeyTyperSimulator
                     }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxHasFocus_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxHasFocus.Checked)
             {

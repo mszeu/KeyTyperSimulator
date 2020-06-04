@@ -41,10 +41,10 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.label2 = new System.Windows.Forms.Label();
+            this.trackBarTypeFreq = new System.Windows.Forms.TrackBar();
+            this.labelTypeFreq = new System.Windows.Forms.Label();
+            this.trackBarInitialDelay = new System.Windows.Forms.TrackBar();
+            this.labelInitialDelay = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textApp = new System.Windows.Forms.TextBox();
@@ -53,12 +53,12 @@
             this.btnClrAll = new System.Windows.Forms.Button();
             this.checkBoxEnter = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLastError = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.checkBoxHasFocus = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarTypeFreq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarInitialDelay)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,49 +170,49 @@
             this.textBox6.Size = new System.Drawing.Size(408, 20);
             this.textBox6.TabIndex = 11;
             // 
-            // trackBar1
+            // trackBarTypeFreq
             // 
-            this.trackBar1.LargeChange = 50;
-            this.trackBar1.Location = new System.Drawing.Point(149, 250);
-            this.trackBar1.Maximum = 1000;
-            this.trackBar1.Minimum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(195, 45);
-            this.trackBar1.SmallChange = 50;
-            this.trackBar1.TabIndex = 12;
-            this.trackBar1.Value = 100;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.trackBarTypeFreq.LargeChange = 50;
+            this.trackBarTypeFreq.Location = new System.Drawing.Point(149, 250);
+            this.trackBarTypeFreq.Maximum = 1000;
+            this.trackBarTypeFreq.Minimum = 100;
+            this.trackBarTypeFreq.Name = "trackBarTypeFreq";
+            this.trackBarTypeFreq.Size = new System.Drawing.Size(195, 45);
+            this.trackBarTypeFreq.SmallChange = 50;
+            this.trackBarTypeFreq.TabIndex = 12;
+            this.trackBarTypeFreq.Value = 100;
+            this.trackBarTypeFreq.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
-            // label1
+            // labelTypeFreq
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(350, 250);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
+            this.labelTypeFreq.AutoSize = true;
+            this.labelTypeFreq.Location = new System.Drawing.Point(350, 250);
+            this.labelTypeFreq.Name = "labelTypeFreq";
+            this.labelTypeFreq.Size = new System.Drawing.Size(35, 13);
+            this.labelTypeFreq.TabIndex = 13;
+            this.labelTypeFreq.Text = "label1";
             // 
-            // trackBar2
+            // trackBarInitialDelay
             // 
-            this.trackBar2.LargeChange = 500;
-            this.trackBar2.Location = new System.Drawing.Point(49, 26);
-            this.trackBar2.Maximum = 5000;
-            this.trackBar2.Minimum = 1000;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(195, 45);
-            this.trackBar2.SmallChange = 500;
-            this.trackBar2.TabIndex = 14;
-            this.trackBar2.Value = 1000;
-            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            this.trackBarInitialDelay.LargeChange = 500;
+            this.trackBarInitialDelay.Location = new System.Drawing.Point(49, 26);
+            this.trackBarInitialDelay.Maximum = 5000;
+            this.trackBarInitialDelay.Minimum = 1000;
+            this.trackBarInitialDelay.Name = "trackBarInitialDelay";
+            this.trackBarInitialDelay.Size = new System.Drawing.Size(195, 45);
+            this.trackBarInitialDelay.SmallChange = 500;
+            this.trackBarInitialDelay.TabIndex = 14;
+            this.trackBarInitialDelay.Value = 1000;
+            this.trackBarInitialDelay.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
-            // label2
+            // labelInitialDelay
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "label2";
+            this.labelInitialDelay.AutoSize = true;
+            this.labelInitialDelay.Location = new System.Drawing.Point(250, 26);
+            this.labelInitialDelay.Name = "labelInitialDelay";
+            this.labelInitialDelay.Size = new System.Drawing.Size(35, 13);
+            this.labelInitialDelay.TabIndex = 15;
+            this.labelInitialDelay.Text = "label2";
             // 
             // label3
             // 
@@ -285,7 +285,7 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
+            this.toolStripStatusVersion,
             this.toolStripStatusLastError,
             this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 303);
@@ -296,13 +296,13 @@
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.toolStripStatusVersion.Name = "toolStripStatusLabel1";
+            this.toolStripStatusVersion.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusVersion.Text = "toolStripStatusLabel1";
             // 
-            // toolStripStatusLabel3
+            // toolStripStatusLastError
             // 
-            this.toolStripStatusLastError.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLastError.Name = "toolStripStatusLastError";
             this.toolStripStatusLastError.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLastError.Text = "toolStripStatusLabel3";
             // 
@@ -325,7 +325,7 @@
             this.checkBoxHasFocus.TabIndex = 24;
             this.checkBoxHasFocus.Text = "Send to the process that has focus";
             this.checkBoxHasFocus.UseVisualStyleBackColor = true;
-            this.checkBoxHasFocus.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBoxHasFocus.CheckedChanged += new System.EventHandler(this.checkBoxHasFocus_CheckedChanged);
             // 
             // Form1
             // 
@@ -341,10 +341,10 @@
             this.Controls.Add(this.textApp);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.trackBar2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.labelInitialDelay);
+            this.Controls.Add(this.trackBarInitialDelay);
+            this.Controls.Add(this.labelTypeFreq);
+            this.Controls.Add(this.trackBarTypeFreq);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -363,8 +363,8 @@
             this.Name = "Form1";
             this.Text = "KeyTyper Simulator by MSZ";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarTypeFreq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarInitialDelay)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -386,10 +386,10 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TrackBar trackBarTypeFreq;
+        private System.Windows.Forms.Label labelTypeFreq;
+        private System.Windows.Forms.TrackBar trackBarInitialDelay;
+        private System.Windows.Forms.Label labelInitialDelay;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textApp;
@@ -398,7 +398,7 @@
         private System.Windows.Forms.Button btnClrAll;
         private System.Windows.Forms.CheckBox checkBoxEnter;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusVersion;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLastError;
         private System.Windows.Forms.CheckBox checkBoxHasFocus;
