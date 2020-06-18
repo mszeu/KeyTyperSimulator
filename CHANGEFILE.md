@@ -1,10 +1,10 @@
 # VERSION HISTORY
 
-##1.0 
+## 1.0 
 
--Initial Version
+- Initial Version
 
-##1.2.2.1
+## 1.2.2.1
 
 - Detection of CAPS LOCK status and message box to inform the user about that
 - Option to clear all the fields
@@ -12,10 +12,10 @@
 - Added the option to terminate the input with a <CR>
 - Some minor fixes
 
-##1.2.2.2
+## 1.2.2.2
 - Code clearup
 
-##1.2.3
+## 1.2.3
 
 - Code cleanup and refactoring
 - Bug fixed: if the application to send the keystrokes were not found an uncaught exteption could be thrown
