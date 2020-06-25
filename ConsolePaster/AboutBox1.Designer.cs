@@ -98,7 +98,7 @@ namespace KeyTyperSimulator
             this.labelCompanyName.Name = "labelCompanyName";
             this.labelCompanyName.Size = new System.Drawing.Size(268, 17);
             this.labelCompanyName.TabIndex = 22;
-            this.labelCompanyName.Text = "MSZ - msz@msz.eu";
+            this.labelCompanyName.Text = "MSZ - msz@msz.eu - https://msz.eu";
             this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelCopyright
