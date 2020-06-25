@@ -294,9 +294,9 @@
             this.statusStrip1.TabIndex = 23;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // toolStripStatusVersion
             // 
-            this.toolStripStatusVersion.Name = "toolStripStatusLabel1";
+            this.toolStripStatusVersion.Name = "toolStripStatusVersion";
             this.toolStripStatusVersion.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusVersion.Text = "toolStripStatusLabel1";
             // 
@@ -311,8 +311,8 @@
             this.toolStripStatusLabel2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripStatusLabel2.IsLink = true;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(79, 17);
-            this.toolStripStatusLabel2.Text = "http://msz.eu";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(84, 17);
+            this.toolStripStatusLabel2.Text = "https://msz.eu";
             this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
             // 
