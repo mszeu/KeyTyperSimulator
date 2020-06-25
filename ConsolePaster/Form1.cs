@@ -5,7 +5,7 @@
 //     The program switches to the indicated process and simulate typing a sequence of 
 //     characters as when they are typed using the keyboard with a selectable frequency.
 
-//    Copyright(C) 2020  Marco S. Zuppone - msz@msz.eu- http://msz.eu
+//    Copyright(C) 2020  Marco S. Zuppone - msz@msz.eu- https://msz.eu
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU Affero General Public License as
