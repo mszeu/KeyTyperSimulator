@@ -24,4 +24,4 @@
 ## 1.2.3.1
 - Minor typo fixes
 - Application icon has been changed due to visibility issues
-- Starting with this version all the EXE compiled by the author are digitally signed
+- Starting with this version all the EXE compiled by the author is digitally signed
