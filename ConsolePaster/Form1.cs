@@ -64,6 +64,7 @@ namespace KeyTyperSimulator
                         toolStripStatusLastError.Text = "";
                     }
                     Thread.Sleep(trackBarInitialDelay.Value);
+
                     foreach (char carattere in daMandare)
                     {
                         SendKeys.SendWait(carattere.ToString());
