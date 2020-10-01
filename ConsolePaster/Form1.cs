@@ -37,8 +37,11 @@ namespace KeyTyperSimulator
 
         public void MandaCaratteri(string daMandare)
         {
+            //I read all the properties of control of the Form now to do not disturb the active window focus
             DialogResult dAnswer = DialogResult.OK;
             int delayBetweenSend = trackBarTypeFreq.Value;
+            int initialDelay = trackBarInitialDelay.Value;
+            Boolean sendEnter = checkBoxEnter.Checked;
 
             if (Control.IsKeyLocked(Keys.CapsLock))
             {
@@ -63,7 +66,7 @@ namespace KeyTyperSimulator
                     { 
                         toolStripStatusLastError.Text = "";
                     }
-                    Thread.Sleep(trackBarInitialDelay.Value);
+                    Thread.Sleep(initialDelay);
 
                     foreach (char carattere in daMandare)
                     {
@@ -71,7 +74,7 @@ namespace KeyTyperSimulator
                         Thread.Sleep(delayBetweenSend);
 
                     }
-                    if (checkBoxEnter.Checked)
+                    if (sendEnter)
                     {
                         SendKeys.SendWait("{ENTER}");
                     }
