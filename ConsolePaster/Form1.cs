@@ -38,7 +38,7 @@ namespace KeyTyperSimulator
         public void MandaCaratteri(string daMandare)
         {
             DialogResult dAnswer = DialogResult.OK;
-
+            int delayBetweenSend = trackBarTypeFreq.Value;
 
             if (Control.IsKeyLocked(Keys.CapsLock))
             {
@@ -68,7 +68,7 @@ namespace KeyTyperSimulator
                     foreach (char carattere in daMandare)
                     {
                         SendKeys.SendWait(carattere.ToString());
-                        Thread.Sleep(trackBarTypeFreq.Value);
+                        Thread.Sleep(delayBetweenSend);
 
                     }
                     if (checkBoxEnter.Checked)
