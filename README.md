@@ -3,7 +3,7 @@
 ## PROGRAM NAME     
   **KeyTyper Simulator**
 ## VERSION 
-  **1.2.3.1**
+  **1.2.3.2**
 
 ## DESCRIPTION
   **KeyTyper Simulator** switches to the indicated process and simulate typing a sequence of 
