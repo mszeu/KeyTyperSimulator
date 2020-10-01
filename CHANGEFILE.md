@@ -25,3 +25,5 @@
 - Minor typo fixes
 - Application icon has been changed due to visibility issues
 - Starting with this version all the EXE compiled by the author is digitally signed
+## 1.2.3.2
+- Minor fix: I read all the properties of control of the Form before to use the SendKeys to do not disturb the active window focus
