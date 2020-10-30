@@ -20,3 +20,7 @@
 		- Starting with this version all the EXE compiled by the author are digitally signed
     1.2.3.2
 	    - Minor fix: I read all the properties of control of the Form before to use the SendKeys to do not disturb the active window focus
+	1.2.3.3
+		-Minor fixes: Thanks to the free license of ReSharper offered by JetBrains I improved the code readibility and optimised the modifiers 
+		              of some methods.
+		-.NET Change: now the .NET used is .NET 4.8
