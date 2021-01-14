@@ -22,27 +22,46 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using KeyTyperSimulator.Properties;
 
 namespace KeyTyperSimulator
 {
-    partial class AboutBox1 : Form
+    internal partial class AboutBox1 : Form
     {
         public AboutBox1()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
+            Text = string.Format("About {0}", AssemblyTitle);
+            labelProductName.Text = AssemblyProduct;
+            labelVersion.Text = string.Format("Version {0}", AssemblyVersion);
+            labelCopyright.Text = AssemblyCopyright;
+            labelCompanyName.Text = AssemblyCompany;
             //this.textBoxDescription.Text = AssemblyDescription;
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            Settings.Default.LicenseAgreementAccepted = true;
+            Settings.Default.Save();
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void AboutBox1_Load(object sender, EventArgs e)
+        {
+            if (Settings.Default.LicenseAgreementAccepted)
+            {
+                button1.Hide();
+                label1.Text = "The license agreement has been accepted. Thanks";
+                okButton.Text = "Ok";
+            }
         }
 
         #region Assembly Attribute Accessors
@@ -51,37 +70,28 @@ namespace KeyTyperSimulator
         {
             get
             {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+                var attributes = Assembly.GetExecutingAssembly()
+                    .GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
                 if (attributes.Length > 0)
                 {
-                    AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
-                    if (titleAttribute.Title != "")
-                    {
-                        return titleAttribute.Title;
-                    }
+                    var titleAttribute = (AssemblyTitleAttribute) attributes[0];
+                    if (titleAttribute.Title != "") return titleAttribute.Title;
                 }
-                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+
+                return Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
             }
         }
 
-        public string AssemblyVersion
-        {
-            get
-            {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }
+        public string AssemblyVersion => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public string AssemblyDescription
         {
             get
             {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+                var attributes = Assembly.GetExecutingAssembly()
+                    .GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
+                if (attributes.Length == 0) return "";
+                return ((AssemblyDescriptionAttribute) attributes[0]).Description;
             }
         }
 
@@ -89,12 +99,10 @@ namespace KeyTyperSimulator
         {
             get
             {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyProductAttribute)attributes[0]).Product;
+                var attributes = Assembly.GetExecutingAssembly()
+                    .GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                if (attributes.Length == 0) return "";
+                return ((AssemblyProductAttribute) attributes[0]).Product;
             }
         }
 
@@ -102,12 +110,10 @@ namespace KeyTyperSimulator
         {
             get
             {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+                var attributes = Assembly.GetExecutingAssembly()
+                    .GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+                if (attributes.Length == 0) return "";
+                return ((AssemblyCopyrightAttribute) attributes[0]).Copyright;
             }
         }
 
@@ -115,37 +121,13 @@ namespace KeyTyperSimulator
         {
             get
             {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyCompanyAttribute)attributes[0]).Company;
+                var attributes = Assembly.GetExecutingAssembly()
+                    .GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
+                if (attributes.Length == 0) return "";
+                return ((AssemblyCompanyAttribute) attributes[0]).Company;
             }
         }
+
         #endregion
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.LicenseAgreementAccepted = true;
-            Properties.Settings.Default.Save();
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            this.Close();
-            
-        }
-
-        private void AboutBox1_Load(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.LicenseAgreementAccepted) { 
-                button1.Hide();
-                label1.Text = "The license agreement has been accepted. Thanks";
-                okButton.Text = "Ok";
-            }
-        }
     }
 }
