@@ -1,5 +1,8 @@
 # KeyTyper Simulator
-![](https://github.com/mszeu/KeyTyperSimulator/blob/development/ConsolePaster/images/keyshot.png)
+![](ConsolePaster/images/keyshot.png)
+
+
+<a href="https://www.jetbrains.com/?from=KeyTyperSimulator"><img src=ConsolePaster/images/jetbrains-variant-3.png width=100></a>May thanks to <a href="https://www.jetbrains.com/?from=PayshieldPPressureTest">JetBrains</a> for giving us the <b>Open Source License</b> for free with the full access to their developer suite.
 ## PROGRAM NAME     
   **KeyTyper Simulator**
 ## VERSION 
