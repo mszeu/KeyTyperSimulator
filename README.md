@@ -1,5 +1,5 @@
 # KeyTyper Simulator
-![](https://mszit-msz.netdna-ssl.com/wp-content/uploads/2020/05/KeyTyper.png)
+![](https://github.com/mszeu/KeyTyperSimulator/blob/development/ConsolePaster/images/keyshot.png)
 ## PROGRAM NAME     
   **KeyTyper Simulator**
 ## VERSION 
