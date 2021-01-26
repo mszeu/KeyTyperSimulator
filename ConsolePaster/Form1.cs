@@ -126,12 +126,14 @@ namespace KeyTyperSimulator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (Settings.Default.InitialDelay >= trackBarInitialDelay.Minimum)
+            if (Settings.Default.InitialDelay >= trackBarInitialDelay.Minimum &&
+                Settings.Default.InitialDelay <= trackBarInitialDelay.Maximum)
             {
                 trackBarInitialDelay.Value = Settings.Default.InitialDelay;
             }
 
-            if (Settings.Default.CharFrequency >= trackBarTypeFreq.Minimum)
+            if (Settings.Default.CharFrequency >= trackBarTypeFreq.Minimum &&
+                Settings.Default.CharFrequency <= trackBarTypeFreq.Maximum)
             {
                 trackBarTypeFreq.Value = Settings.Default.CharFrequency;
             }
