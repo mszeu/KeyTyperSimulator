@@ -28,3 +28,6 @@
 
 ## 1.2.3.2
 - Minor fix: I read all the properties of control of the Form before to use the SendKeys to do not disturb the active window focus
+
+## 1.2.3.4
+- The values of Initial Delay and Key Frequency are preserved between executions
