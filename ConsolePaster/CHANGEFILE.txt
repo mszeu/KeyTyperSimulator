@@ -24,3 +24,6 @@
 		-Minor fixes: Thanks to the free license of ReSharper offered by JetBrains I improved the code readibility and optimised the modifiers 
 		              of some methods.
 		-.NET Change: now the .NET used is .NET 4.8
+   1.2.3.4
+		- The Initial Delay and the Character Type Frequency settings are saved wehn the program terminates and saved.
+		  they are read from the Settings when the program is started

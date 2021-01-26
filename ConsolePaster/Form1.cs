@@ -20,14 +20,14 @@
 //    You should have received a copy of the GNU Affero General Public License
 //    along with this program.If not, see<https://www.gnu.org/licenses/>.
 
+using KeyTyperSimulator.Properties;
+using Microsoft.VisualBasic;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
-using KeyTyperSimulator.Properties;
-using Microsoft.VisualBasic;
 
 namespace KeyTyperSimulator
 {
@@ -126,12 +126,26 @@ namespace KeyTyperSimulator
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (Settings.Default.InitialDelay >= trackBarInitialDelay.Minimum &&
+                Settings.Default.InitialDelay <= trackBarInitialDelay.Maximum)
+            {
+                trackBarInitialDelay.Value = Settings.Default.InitialDelay;
+            }
+
+            if (Settings.Default.CharFrequency >= trackBarTypeFreq.Minimum &&
+                Settings.Default.CharFrequency <= trackBarTypeFreq.Maximum)
+            {
+                trackBarTypeFreq.Value = Settings.Default.CharFrequency;
+            }
+
             labelTypeFreq.Text = trackBarTypeFreq.Value + " ms";
             labelInitialDelay.Text = trackBarInitialDelay.Value + " ms";
             toolStripStatusVersion.Text = $"Version {Assembly.GetExecutingAssembly().GetName().Version}";
             toolStripStatusLabel2.Spring = true;
             toolStripStatusLabel2.Alignment = ToolStripItemAlignment.Right;
             toolStripStatusLastError.Text = "";
+            
+
             if (!Settings.Default.LicenseAgreementAccepted)
             {
                 var frm = new AboutBox1();
@@ -192,6 +206,13 @@ namespace KeyTyperSimulator
         private void checkBoxHasFocus_CheckedChanged(object sender, EventArgs e)
         {
             textApp.Enabled = !checkBoxHasFocus.Checked;
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.CharFrequency = trackBarTypeFreq.Value;
+            Settings.Default.InitialDelay = trackBarInitialDelay.Value;
+            Settings.Default.Save();
         }
     }
 }
