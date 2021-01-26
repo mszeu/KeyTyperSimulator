@@ -1,16 +1,20 @@
 # KeyTyper Simulator
-![](https://mszit-msz.netdna-ssl.com/wp-content/uploads/2020/05/KeyTyper.png)
+![](ConsolePaster/images/keyshot.png)
+
+
+<a href="https://www.jetbrains.com/?from=KeyTyperSimulator"><img src=ConsolePaster/images/jetbrains-variant-3.png width=100></a>May thanks to <a href="https://www.jetbrains.com/?from=PayshieldPPressureTest">JetBrains</a> for giving us the <b>Open Source License</b> for free with the full access to their developer suite.
 ## PROGRAM NAME     
   **KeyTyper Simulator**
 ## VERSION 
-  **1.2.3.2**
+
+  **1.2.3.3**
 
 ## DESCRIPTION
   **KeyTyper Simulator** switches to the indicated process and simulate typing a sequence of 
   characters as when they are typed using the keyboard with a selectable frequency.
 
 ## REQUIREMENTS
-  To run the program you need **Microsoft .NET Framework 4.7.2**
+  To run the program you need **Microsoft .NET Framework 4.8**
 	Source code was written using **Microsoft Visual Studio 2019**
 	
 ## COPYRIGHT & LICENSE

@@ -21,10 +21,13 @@
 //    along with this program.If not, see<https://www.gnu.org/licenses/>.
 
 using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
-using System.Reflection;
+using KeyTyperSimulator.Properties;
+using Microsoft.VisualBasic;
 
 namespace KeyTyperSimulator
 {
@@ -35,99 +38,118 @@ namespace KeyTyperSimulator
             InitializeComponent();
         }
 
-        public void MandaCaratteri(string daMandare)
+        private void MandaCaratteri(string daMandare)
         {
             //I read all the properties of control of the Form now to do not disturb the active window focus
-            DialogResult dAnswer = DialogResult.OK;
-            int delayBetweenSend = trackBarTypeFreq.Value;
-            int initialDelay = trackBarInitialDelay.Value;
-            Boolean sendEnter = checkBoxEnter.Checked;
+            var dAnswer = DialogResult.OK;
+            var delayBetweenSend = trackBarTypeFreq.Value;
+            var initialDelay = trackBarInitialDelay.Value;
+            var sendEnter = checkBoxEnter.Checked;
 
-            if (Control.IsKeyLocked(Keys.CapsLock))
+            if (IsKeyLocked(Keys.CapsLock))
+                dAnswer = MessageBox.Show(
+                    @"CAPS Lock is enabled. The characters case sent to the application will be inverted",
+                    @"ATTENTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (dAnswer != DialogResult.OK) return;
+            try
             {
-                dAnswer = MessageBox.Show("CAPS Lock is enabled. The characters case sent to the application will be inverted",
-                    "ATTENTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            }
-            if (dAnswer == DialogResult.OK)
-            {
-                try
-                {
-                    if (!checkBoxHasFocus.Checked)
+                if (!checkBoxHasFocus.Checked)
+                    try
                     {
-
-                        try
-                        {
-                            Microsoft.VisualBasic.Interaction.AppActivate(textApp.Text);
-                            toolStripStatusLastError.Text = "";
-                        }
-                        catch (Exception ex) { toolStripStatusLastError.Text = ex.Message + " sending to process that has focus"; }
-                    }
-                    else
-                    { 
+                        Interaction.AppActivate(textApp.Text);
                         toolStripStatusLastError.Text = "";
                     }
-                    Thread.Sleep(initialDelay);
-
-                    foreach (char carattere in daMandare)
+                    catch (Exception ex)
                     {
-                        SendKeys.SendWait(carattere.ToString());
-                        Thread.Sleep(delayBetweenSend);
+                        toolStripStatusLastError.Text = ex.Message + @" sending to process that has focus";
+                    }
+                else
+                    toolStripStatusLastError.Text = "";
 
-                    }
-                    if (sendEnter)
-                    {
-                        SendKeys.SendWait("{ENTER}");
-                    }
-                }
-                catch (Exception E)
+                Thread.Sleep(initialDelay);
+
+                foreach (var carattere in daMandare)
                 {
-                    MessageBox.Show(E.Message, "Error");
+                    SendKeys.SendWait(carattere.ToString());
+                    Thread.Sleep(delayBetweenSend);
                 }
+
+                if (sendEnter) SendKeys.SendWait("{ENTER}");
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.Message, "Error");
             }
         }
-      
-       
-       
-        private void trackBar1_Scroll(object sender, EventArgs e) => labelTypeFreq.Text = trackBarTypeFreq.Value.ToString() + " ms";
 
-        private void trackBar2_Scroll(object sender, EventArgs e) => labelInitialDelay.Text = trackBarInitialDelay.Value.ToString() + " ms";
 
-        private void button1_Click(object sender, EventArgs e) => MandaCaratteri(textBox1.Text);
-        private void button2_Click(object sender, EventArgs e) => MandaCaratteri(textBox2.Text);
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            labelTypeFreq.Text = trackBarTypeFreq.Value + " ms";
+        }
 
-        private void button3_Click(object sender, EventArgs e) => MandaCaratteri(textBox3.Text);
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            labelInitialDelay.Text = trackBarInitialDelay.Value + " ms";
+        }
 
-        private void button4_Click(object sender, EventArgs e) => MandaCaratteri(textBox4.Text);
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MandaCaratteri(textBox1.Text);
+        }
 
-        private void button5_Click(object sender, EventArgs e) => MandaCaratteri(textBox5.Text);
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MandaCaratteri(textBox2.Text);
+        }
 
-        private void button6_Click(object sender, EventArgs e) => MandaCaratteri(textBox6.Text);
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MandaCaratteri(textBox3.Text);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MandaCaratteri(textBox4.Text);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MandaCaratteri(textBox5.Text);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MandaCaratteri(textBox6.Text);
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            labelTypeFreq.Text = trackBarTypeFreq.Value.ToString() + " ms"; 
-            labelInitialDelay.Text = trackBarInitialDelay.Value.ToString() + " ms";
-            toolStripStatusVersion.Text = String.Format("Version {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            labelTypeFreq.Text = trackBarTypeFreq.Value + " ms";
+            labelInitialDelay.Text = trackBarInitialDelay.Value + " ms";
+            toolStripStatusVersion.Text = $"Version {Assembly.GetExecutingAssembly().GetName().Version}";
             toolStripStatusLabel2.Spring = true;
             toolStripStatusLabel2.Alignment = ToolStripItemAlignment.Right;
             toolStripStatusLastError.Text = "";
-            if (!Properties.Settings.Default.LicenseAgreementAccepted)
+            if (!Settings.Default.LicenseAgreementAccepted)
             {
-
-                AboutBox1 frm = new AboutBox1();
+                var frm = new AboutBox1();
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    Properties.Settings.Default.LicenseAgreementAccepted = true;
-                    Properties.Settings.Default.Save();
+                    Settings.Default.LicenseAgreementAccepted = true;
+                    Settings.Default.Save();
                 }
                 else
-                    this.Close();
+                {
+                    Close();
+                }
             }
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            AboutBox1 frm = new AboutBox1();
+            var frm = new AboutBox1();
             frm.ShowDialog();
         }
 
@@ -143,10 +165,12 @@ namespace KeyTyperSimulator
 
         private void checkBoxEnter_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBoxEnter.Checked) 
-            { checkBoxEnter.ForeColor = Color.DarkRed;
+            if (checkBoxEnter.Checked)
+            {
+                checkBoxEnter.ForeColor = Color.DarkRed;
                 checkBoxEnter.Font = new Font(textBox1.Font, FontStyle.Bold);
-            } else
+            }
+            else
             {
                 checkBoxEnter.ForeColor = Color.Black;
                 checkBoxEnter.Font = new Font(textBox1.Font, FontStyle.Regular);
@@ -155,26 +179,19 @@ namespace KeyTyperSimulator
 
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
-
-            try {
-                System.Diagnostics.Process.Start("http://msz.eu");
+            try
+            {
+                Process.Start("https://msz.eu");
             }
-            catch (Exception ecce) {
-                _ = MessageBox.Show(ecce.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+            catch (Exception ecce)
+            {
+                _ = MessageBox.Show(ecce.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void checkBoxHasFocus_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxHasFocus.Checked)
-            {
-                textApp.Enabled = false;
-
-            }
-            else
-            {
-                textApp.Enabled = true;
-            }
+            textApp.Enabled = !checkBoxHasFocus.Checked;
         }
     }
 }

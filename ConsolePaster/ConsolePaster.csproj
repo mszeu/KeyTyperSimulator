@@ -118,6 +118,8 @@
   <ItemGroup>
     <Content Include="COPYING.txt" />
     <Content Include="CHANGEFILE.txt" />
+    <Content Include="images\jetbrains-variant-3.png" />
+    <Content Include="images\keyshot.png" />
     <Content Include="internet_lock_locked_padlock.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -132,5 +134,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
