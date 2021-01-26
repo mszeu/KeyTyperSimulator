@@ -2,12 +2,12 @@
 ![](ConsolePaster/images/keyshot.png)
 
 
-<a href="https://www.jetbrains.com/?from=KeyTyperSimulator"><img src=ConsolePaster/images/jetbrains-variant-3.png width=100></a>May thanks to <a href="https://www.jetbrains.com/?from=PayshieldPPressureTest">JetBrains</a> for giving us the <b>Open Source License</b> for free with the full access to their developer suite.
+<a href="https://www.jetbrains.com/?from=KeyTyperSimulator"><img src=ConsolePaster/images/jetbrains-variant-3.png width=100></a>May thanks to <a href="https://www.jetbrains.com/?from=KeyTyperSimulator">JetBrains</a> for giving us the <b>Open Source License</b> for free with the full access to their developer suite.
 ## PROGRAM NAME     
   **KeyTyper Simulator**
 ## VERSION 
 
-  **1.2.3.3**
+  **1.2.3.4**
 
 ## DESCRIPTION
   **KeyTyper Simulator** switches to the indicated process and simulate typing a sequence of 
