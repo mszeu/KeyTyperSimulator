@@ -1,6 +1,7 @@
 # KeyTyper Simulator
 ![](ConsolePaster/images/keyshot.png)
 
+&nbsp;
 
 <a href="https://www.jetbrains.com/?from=KeyTyperSimulator"><img src=ConsolePaster/images/jetbrains-variant-3.png width=100></a>May thanks to <a href="https://www.jetbrains.com/?from=KeyTyperSimulator">JetBrains</a> for giving us the <b>Open Source License</b> for free with the full access to their developer suite.
 ## PROGRAM NAME     
@@ -18,7 +19,7 @@
 	Source code was written using **Microsoft Visual Studio 2019**
 	
 ## COPYRIGHT & LICENSE
-  Copyright(C) 2020  Marco S. Zuppone - msz@msz.eu - https://msz.eu
+  Copyright(C) 2020-2021  Marco S. Zuppone - msz@msz.eu - https://msz.eu
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU Affero General Public License as
